@@ -1,0 +1,304 @@
+:root {
+    --main-green: #1a9c49;
+    --dark-green: #106e32;
+    --text-white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--main-green);
+    color: var(--text-white);
+    min-height: 100vh;
+}
+
+.header__container,
+.flags-promo__container,
+.welcome-section__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.region-menu {
+    width: 100%;
+    max-width: 600px;
+}
+
+.region-menu__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.region-menu__link {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.region-menu__link:hover {
+    opacity: 1;
+}
+
+.flags-promo {
+    background: url('Screenshot_7.png') center/cover no-repeat;
+    padding: 80px 0;
+    width: 100%;
+}
+
+.flags-promo__badge {
+    background-color: rgba(26, 156, 73, 0.85);
+    padding: 30px 40px;
+    border-radius: 25px;
+    max-width: 500px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+.flags-promo__title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.flags-promo__subtitle {
+    font-size: 16px;
+    line-height: 1.4;
+    opacity: 0.95;
+}
+
+.welcome-section {
+    padding: 40px 0;
+    width: 100%;
+}
+
+.welcome-section__banner {
+    display: inline-block;
+    background-color: var(--dark-green);
+    border-radius: 20px;
+    padding: 18px 60px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.welcome-section__banner:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.welcome-section__title {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 700;
+    display: block;
+}
+
+.preview-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.preview-card__image-wrapper {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.preview-card__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ
+   ========================================================================== */
+
+/*1. ПЛАНШЕТЫ (Портретная ориентация) — до 992px */
+@media (max-width: 992px) {
+    .flags-promo {
+        padding: 60px 0;
+    }
+    
+    .flags-promo__title {
+        font-size: 36px;
+    }
+}
+
+/*2. ПЛАНШЕТЫ (Вертикально) и ТЕЛЕФОНЫ (Горизонтально) — до 768px */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .region-menu {
+        max-width: 100%;
+    }
+
+    .region-menu__list {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .region-menu__item {
+        flex: 1 1 calc(33.333% - 10px);
+        min-width: 120px;
+    }
+
+    .region-menu__link {
+        display: block;
+        font-size: 13px;
+        padding: 8px 4px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    }
+
+    .flags-promo {
+        padding: 50px 0;
+    }
+
+    .flags-promo__badge {
+        padding: 24px 30px;
+        max-width: 90%;
+        border-radius: 20px;
+    }
+
+    .flags-promo__title {
+        font-size: 32px;
+    }
+
+    .flags-promo__subtitle {
+        font-size: 15px;
+    }
+
+    .welcome-section__banner {
+        padding: 14px 40px;
+        margin-bottom: 30px;
+    }
+
+    .welcome-section__title {
+        font-size: 24px;
+    }
+    
+    .preview-card__image-wrapper {
+        border-radius: 20px;
+        max-width: 90%;
+    }
+}
+
+/*3. ТЕЛЕФОНЫ (Горизонтально / Landscape) — узкие по высоте экраны */
+@media (max-width: 896px) and (orientation: landscape) {
+    .flags-promo {
+        padding: 30px 0;
+    }
+
+    .flags-promo__badge {
+        padding: 15px 25px;
+    }
+
+    .flags-promo__title {
+        font-size: 26px;
+        margin-bottom: 6px;
+    }
+
+    .flags-promo__subtitle {
+        font-size: 14px;
+    }
+
+    .welcome-section__banner {
+        margin-bottom: 20px;
+        padding: 10px 35px;
+    }
+
+    .welcome-section__title {
+        font-size: 20px;
+    }
+}
+
+/*4. ТЕЛЕФОНЫ (Вертикально) — до 480px */
+@media (max-width: 480px) {
+    .header {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .region-menu__item {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .region-menu__link {
+        font-size: 12px;
+        padding: 10px 5px;
+    }
+
+    .flags-promo {
+        padding: 40px 0;
+    }
+
+    .flags-promo__badge {
+        padding: 20px 15px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    .flags-promo__title {
+        font-size: 26px;
+        letter-spacing: normal;
+    }
+
+    .flags-promo__subtitle {
+        font-size: 14px;
+    }
+
+    .welcome-section {
+        padding: 30px 0;
+    }
+
+    .welcome-section__banner {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        border-radius: 15px;
+    }
+
+    .welcome-section__title {
+        font-size: 20px;
+    }
+
+    .preview-card__image-wrapper {
+        border-radius: 15px;
+        max-width: 100%;
+    }
+}
